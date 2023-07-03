@@ -15,8 +15,11 @@ if ($SessionController::isLogged()) {
 <body>
     <main class="login container">
         <div class="login-logo">
-            <img class="login-logo-img" src="public/img/logo.svg" alt="asdasd">
-            <h1 class="login-logo-text">CARNIST</h1>
+            <img class="login-logo-img" src="public/img/logo.png" alt="logo">
+            <div class="flex flex-center">
+                <h1 class="login-logo-text">REDEM</h1>
+                <h1 class="login-logo-text logo-login-text-brown">PAW</h1>
+            </div>
         </div>
         <form class="login-form" action="checkLogin" method="POST">
             <div class="login-error-message">
