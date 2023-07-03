@@ -26,6 +26,10 @@ Stworzenie aplikacji pozwalającej użytkownikom przeglądaj, jak i tworzyć og�
 
 ![folder-flow](readme_files/folder-flow.png)
 
+## FIGMA:
+
+![Kliknij tutaj]: https://www.figma.com/file/ZoEKdd82jdXUYH6LFsiTPp/Untitled?type=design&node-id=1%3A3&mode=design&t=4QemBiYVh9muGkZP-1
+
 ## PRZYKŁAD DZIAŁANIA:
 
 #### Przy pierwszym wejściu na stronę mamy możliwość zalogowania się, lecz nie mając konta klikamy przycisk zarejestruj.
