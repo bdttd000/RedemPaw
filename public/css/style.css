@@ -7,10 +7,12 @@
 @import "./components/card.css";
 @import "./components/input.css";
 @import "./components/button.css";
+@import "./components/select.css";
 
 @import "./views/home.css";
 @import "./views/login.css";
-@import "./views/car.css";
+@import "./views/pet.css";
+@import "./views/register.css";
 
 * {
     box-sizing: border-box;
@@ -55,7 +57,7 @@ main {
 }
 
 .white-text {
-    color: var(--white-text)
+    color: var(--text-white)
 }
 
 ul {
