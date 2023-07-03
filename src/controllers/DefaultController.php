@@ -33,4 +33,10 @@ class DefaultController extends AppController
     {
         $this->render('privacyPolicy');
     }
+
+    public function addPet()
+    {
+
+        $this->render('addPet');
+    }
 }
