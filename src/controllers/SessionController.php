@@ -16,7 +16,7 @@ class SessionController extends AppController
     public function logout(): void
     {
         unset($_SESSION['user_info']);
-        $this->redirectToHome();
+        $this->redirectToLogin();
     }
 
     public function unserializeUser(): ?User

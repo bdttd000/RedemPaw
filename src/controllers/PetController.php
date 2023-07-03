@@ -28,6 +28,11 @@ class PetController extends AppController
     public function home($query = '')
     {
         $user = $this->sessionController->unserializeUser();
+
+        if (!$user) {
+            $this->redirectToLogin();
+        }
+
         $defaultCityId = $user->getUserInfo()->getCityId();
         $defaultCityName = $user->getUserInfo()->getCityName();
 
@@ -40,6 +45,11 @@ class PetController extends AppController
     public function pet($query = '')
     {
         $user = $this->sessionController->unserializeUser();
+
+        if (!$user) {
+            $this->redirectToLogin();
+        }
+
         $defaultCityId = $user->getUserInfo()->getCityId();
         $defaultCityName = $user->getUserInfo()->getCityName();
 
