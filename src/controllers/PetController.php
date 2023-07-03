@@ -25,13 +25,23 @@ class PetController extends AppController
         $this->sessionController = new SessionController();
     }
 
+    public function home($query = '')
+    {
+        $user = $this->sessionController->unserializeUser();
+        $defaultCityId = $user->getUserInfo()->getCityId();
+        $defaultCityName = $user->getUserInfo()->getCityName();
+
+        $cities = $this->petRepository->getAllCities();
+        $pets = $this->getPets($defaultCityId);
+
+        $this->render('home', ['pets' => $pets, 'cities' => $cities, 'defaultCityId' => $defaultCityId, 'defaultCityName' => $defaultCityName]);
+    }
+
     public function pet($query = '')
     {
-        if ($query == '') {
-            $userInfo = $this->sessionController->unserializeUser();
-            $userCity = $userInfo->getUserInfo()->getCityId();
-            $query = strval($userCity);
-        }
+        $user = $this->sessionController->unserializeUser();
+        $defaultCityId = $user->getUserInfo()->getCityId();
+        $defaultCityName = $user->getUserInfo()->getCityName();
 
         parse_str($query, $query);
         $petId = intval($query['id']);
@@ -39,7 +49,7 @@ class PetController extends AppController
         $pet = $this->petRepository->getPetById($petId);
         $owner = $this->userRepository->getUserById($pet->getUserId());
 
-        $this->render('pet', ['pet' => $pet, 'owner' => $owner]);
+        $this->render('pet', ['pet' => $pet, 'owner' => $owner, 'defaultCityId' => $defaultCityId, 'defaultCityName' => $defaultCityName]);
     }
 
     public function getPetById($petId)

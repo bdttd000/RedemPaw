@@ -3,16 +3,6 @@ $SessionController = new SessionController();
 if ($SessionController::isLogged() === false) {
     $SessionController->redirectToLogin();
 }
-
-$user = $SessionController->unserializeUser();
-$defaultCityId = $user->getUserInfo()->getCityId();
-$defaultCityName = $user->getUserInfo()->getCityName();
-
-$Repository = new Repository;
-$cities = $Repository->getAllCities();
-
-$petController = new PetController();
-$pets = $petController->getPets($defaultCityId);
 ?>
 
 <html lang="en">
@@ -22,11 +12,6 @@ $pets = $petController->getPets($defaultCityId);
     <script src="public/js/search-bar.js" defer></script>
     <title>home</title>
 </head>
-
-<?php
-// echo strlen($pet->getPetInfo()->getDescription()) > 50 ? substr($pet->getPetInfo()->getDescription(), 0, 50) . '...' : $pet->getPetInfo()->getDescription();
-// $pet->getPetInfo()->getName();
-?>
 
 <body>
     <?php include('public/views/components/navbar.php'); ?>

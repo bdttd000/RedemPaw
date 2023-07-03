@@ -3,10 +3,6 @@ $SessionController = new SessionController();
 if ($SessionController::isLogged() === false) {
     $SessionController->redirectToLogin();
 }
-
-$user = $SessionController->unserializeUser();
-$defaultCityId = $user->getUserInfo()->getCityId();
-$defaultCityName = $user->getUserInfo()->getCityName();
 ?>
 
 <html lang="en">
@@ -61,7 +57,6 @@ $defaultCityName = $user->getUserInfo()->getCityName();
                             alt="Zdjecie zwierzaka">';
                         }
                     }
-
                     ?>
                 </div>
             </section>
